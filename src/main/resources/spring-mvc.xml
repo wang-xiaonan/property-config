@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="propertyConfigurer" class="com.wxn.propertyconfig.config.PropertyPlaceholderConfigurer">
+        <!--<property name="location" value="classpath:config/common.properties"></property>-->
+
+        <!-- 多文件 -->
+        <property name="locations">
+            <list>
+                <value>classpath:application.properties</value>
+                <value>classpath:config/common.properties</value>
+            </list>
+        </property>
+        <property name="fileEncoding" value="utf-8"></property>
+        <!-- 是否忽略不可解析的Placeholder -->
+        <property name="ignoreUnresolvablePlaceholders" value="true"></property>
+    </bean>
+
+</beans>
